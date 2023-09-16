@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: elyzouli <elyzouli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/16 02:50:03 by elyzouli          #+#    #+#             */
-/*   Updated: 2023/09/16 20:52:45 by elyzouli         ###   ########.fr       */
+/*   Created: 2023/09/16 17:06:31 by elyzouli          #+#    #+#             */
+/*   Updated: 2023/09/16 20:52:30 by elyzouli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero(void *buffer, size_t n)
+void *memset(void * pointer, int value, size_t count)
 {
-	size_t	i;
+	unsigned char *c;
 
-	i = 0;
-	while (i < n)
+	c = (unsigned char)pointer;
+	while(count--)
 	{
-		*((unsigned char *)buffer + i) = '\0';
-		i++;
+		c = 0;
 	}
+	return (pointer);
 }

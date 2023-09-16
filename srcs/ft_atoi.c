@@ -6,11 +6,11 @@
 /*   By: elyzouli <elyzouli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/16 01:18:00 by elyzouli          #+#    #+#             */
-/*   Updated: 2023/09/16 02:51:25 by elyzouli         ###   ########.fr       */
+/*   Updated: 2023/09/16 20:52:48 by elyzouli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/libft.h"
+#include "libft.h"
 
 int	ft_atoi(char *str)
 {
@@ -21,6 +21,8 @@ int	ft_atoi(char *str)
 	i = 0;
 	n = 0;
 	sign = 1;
+	if(str == "\0" || str == NULL)
+		return NULL;
 
 	while(str[i] == ' ' || str[i] == '\t' || str[i] == '\n' ||
 			str[i] == '\r' || str[i] == '\v' || str[i] == '\f')
