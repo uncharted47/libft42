@@ -6,11 +6,11 @@
 /*   By: elyzouli <elyzouli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/16 17:13:03 by elyzouli          #+#    #+#             */
-/*   Updated: 2023/09/16 20:52:34 by elyzouli         ###   ########.fr       */
+/*   Updated: 2023/09/16 21:11:28 by elyzouli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../includes/libft.h"
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
@@ -18,6 +18,8 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	const char	*src_ptr;
 	size_t		idx;
 
+if ( dest == NULL || src == NULL || size_t = 0)
+	return NULL;
 	dst_ptr = dst;
 	src_ptr = src;
 	idx = len - 1;
