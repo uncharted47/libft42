@@ -6,7 +6,7 @@
 /*   By: elyzouli <elyzouli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/16 17:13:03 by elyzouli          #+#    #+#             */
-/*   Updated: 2023/09/16 21:16:27 by elyzouli         ###   ########.fr       */
+/*   Updated: 2023/09/17 21:57:46 by elyzouli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	const char	*src_ptr;
 	size_t		i;
 
-if ( dest == NULL || src == NULL || size_t = 0)
-	return NULL;
+	if (dest == NULL || src == NULL || size_t == 0)
+		return (NULL);
 	dst_ptr = dst;
 	src_ptr = src;
 	i = len - 1;

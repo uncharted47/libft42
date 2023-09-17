@@ -6,18 +6,18 @@
 /*   By: elyzouli <elyzouli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/16 17:06:31 by elyzouli          #+#    #+#             */
-/*   Updated: 2023/09/16 21:05:46 by elyzouli         ###   ########.fr       */
+/*   Updated: 2023/09/17 21:58:04 by elyzouli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
 
-void *memset(void * pointer, int value, size_t count)
+void	*memset(void *pointer, int value, size_t count)
 {
-	unsigned char *c;
+	unsigned char	*c;
 
 	c = (unsigned char)pointer;
-	while(count--)
+	while (count--)
 	{
 		c = 0;
 	}
