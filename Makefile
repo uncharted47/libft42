@@ -1,6 +1,7 @@
 FLAG = -Wall -Wextra -Werror
 NAME = libft.a
 SRC = *.c
+INCLUDES = libft.h
 
 OBJ = $(SRC:.c=.o)
 
@@ -11,7 +12,7 @@ $(NAME): $(OBJ)
 	@ranlib $@
 
 %.o: %.c
-	@gcc $(FLAG) -c $< -o $@
+	@gcc $(FLAG) -c $< -o $@ -I {INCLUDES}
 
 clean:
 	@rm -f $(OBJ)
