@@ -6,11 +6,11 @@
 /*   By: elyzouli <elyzouli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/16 17:13:03 by elyzouli          #+#    #+#             */
-/*   Updated: 2023/09/17 21:57:46 by elyzouli         ###   ########.fr       */
+/*   Updated: 2023/09/18 23:59:21 by elyzouli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/libft.h"
+#include "libft.h"
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {

@@ -6,9 +6,11 @@
 /*   By: elyzouli <elyzouli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 01:51:54 by elyzouli          #+#    #+#             */
-/*   Updated: 2023/09/18 01:52:00 by elyzouli         ###   ########.fr       */
+/*   Updated: 2023/09/19 00:04:41 by elyzouli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_strlen(char *str)
 {

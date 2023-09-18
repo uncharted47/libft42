@@ -6,11 +6,11 @@
 /*   By: elyzouli <elyzouli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/17 00:06:23 by elyzouli          #+#    #+#             */
-/*   Updated: 2023/09/17 00:06:26 by elyzouli         ###   ########.fr       */
+/*   Updated: 2023/09/18 23:59:21 by elyzouli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/libft.h"
+#include "libft.h"
 
 void	*ft_memcpy(void *dst, const void *src, size_t n)
 {

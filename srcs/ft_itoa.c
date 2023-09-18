@@ -6,11 +6,11 @@
 /*   By: elyzouli <elyzouli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/16 02:21:46 by elyzouli          #+#    #+#             */
-/*   Updated: 2023/09/17 21:56:44 by elyzouli         ###   ########.fr       */
+/*   Updated: 2023/09/18 23:59:21 by elyzouli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/libft.h"
+#include "libft.h"
 
 static size_t	get_size(long int n)
 {

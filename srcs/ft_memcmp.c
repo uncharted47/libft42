@@ -6,11 +6,11 @@
 /*   By: elyzouli <elyzouli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/16 19:15:42 by elyzouli          #+#    #+#             */
-/*   Updated: 2023/09/17 21:57:10 by elyzouli         ###   ########.fr       */
+/*   Updated: 2023/09/18 23:59:21 by elyzouli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/libft.h"
+#include "libft.h"
 
 int	ft_memcmp(const void *pointer1, const void *pointer2, size_t n)
 {

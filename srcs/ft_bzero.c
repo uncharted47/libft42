@@ -6,11 +6,11 @@
 /*   By: elyzouli <elyzouli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/16 02:50:03 by elyzouli          #+#    #+#             */
-/*   Updated: 2023/09/16 21:05:50 by elyzouli         ###   ########.fr       */
+/*   Updated: 2023/09/18 23:59:21 by elyzouli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/libft.h"
+#include "libft.h"
 
 void	ft_bzero(void *buffer, size_t n)
 {
