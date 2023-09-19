@@ -1,25 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: elyzouli <elyzouli@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/16 17:06:31 by elyzouli          #+#    #+#             */
-/*   Updated: 2023/09/19 20:29:56 by elyzouli         ###   ########.fr       */
+/*   Created: 2023/09/19 20:09:15 by elyzouli          #+#    #+#             */
+/*   Updated: 2023/09/19 20:11:12 by elyzouli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memset(void *pointer, int value, size_t count)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	unsigned char	*c;
-
-	c = (unsigned char *)pointer;
-	while (count--)
-	{
-		*c = value;
-	}
-	return (pointer);
+	if (n > ft_strlen(s1))
+		n = ft_strlen(s1) + 1;
+	if (n > ft_strlen(s2))
+		n = ft_strlen(s2) + 1;
+	return (ft_memcmp(s1, s2, n));
 }
