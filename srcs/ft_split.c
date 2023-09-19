@@ -6,27 +6,20 @@
 /*   By: elyzouli <elyzouli@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 00:06:56 by elyzouli          #+#    #+#             */
-/*   Updated: 2023/09/19 15:02:04 by elyzouli         ###   ########.fr       */
+/*   Updated: 2023/09/20 00:12:59 by elyzouli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	iswhitespace(char *sep, char c)
+static int	iswhitespace(char sep, char c)
 {
-	int	i;
-
-	i = 0;
-	while (sep[i])
-	{
-		if (c == sep[i])
-			return (1);
-		i++;
-	}
+	if (c == sep)
+		return (1);
 	return (0);
 }
 
-static size_t	ft_count_word(char const *str, char *sep)
+static size_t	ft_count_word(char const *str, char sep)
 {
 	size_t	i;
 	size_t	count;
@@ -45,7 +38,7 @@ static size_t	ft_count_word(char const *str, char *sep)
 	return (count);
 }
 
-static size_t	ft_strlenchar(char *str, char *sep)
+static size_t	ft_strlenchar(char *str, char sep)
 {
 	size_t	i;
 
@@ -57,7 +50,7 @@ static size_t	ft_strlenchar(char *str, char *sep)
 	return (i);
 }
 
-static char	*ft_alloc(char *src, char *sep)
+static char	*ft_alloc(char *src, char sep)
 {
 	int		i;
 	char	*split;
@@ -75,28 +68,26 @@ static char	*ft_alloc(char *src, char *sep)
 	return (split);
 }
 
-char	**ft_split(char const *str, char *sep)
+char	**ft_split(char const *str, char sep)
 {
-	int			i;
-	size_t		size;
-	char		**split;
-	int			k;
+	int		i;
+	int		k;
+	char	**split;
 
-	k = 0;
 	i = 0;
-	if (str == NULL)
+	k = 0;
+	split = (char **)malloc(sizeof(char *) * (ft_count_word(str, sep) + 1));
+	if (!split)
 		return (NULL);
-	size = ft_count_word(str, sep);
-	if (size == 0)
-		return (NULL);
-	split = (char **)malloc(sizeof(char *) * (size + 1));
-	while (str[i])
+	if (ft_count_word(str, sep) == 0)
+		split[0] = NULL;
+	while (str && str[i])
 	{
-		while (iswhitespace(sep, str[i]))
+		while (str[i] == sep)
 			i++;
 		if (str[i])
 			split[k++] = ft_alloc((char *)&str[i], sep);
-		while (str[i] && !iswhitespace(sep, str[i]))
+		while (str[i] && str[i] != sep)
 			i++;
 	}
 	split[k] = NULL;
