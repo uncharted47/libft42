@@ -6,7 +6,7 @@
 /*   By: elyzouli <elyzouli@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/16 02:21:46 by elyzouli          #+#    #+#             */
-/*   Updated: 2023/09/19 15:39:37 by elyzouli         ###   ########.fr       */
+/*   Updated: 2023/09/19 16:39:18 by elyzouli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,18 +16,36 @@ static size_t	get_size(long int n)
 {
 	size_t	i;
 
-	i = 1;
-	if (n < 0)
-	{
-		n *= -1;
-		i++;
-	}
+	if (n <= 0)
+		i = 1;
+	else
+		i = 0;
+
 	while (n != 0)
 	{
 		i++;
 		n /= 10;
 	}
 	return (i);
+}
+
+static void	fill_string(char *str, long int num, size_t size)
+{
+	if (num < 0)
+	{
+		str[0] = '-';
+		num *= -1;
+	}
+	str[size] = '\0';
+	while (size > 0)
+	{
+		if (str[size - 1] != '-')
+		{
+			str[size - 1] = (num % 10) + '0';
+			num /= 10;
+		}
+		size--;
+	}
 }
 
 char	*ft_itoa(int n)
@@ -39,23 +57,8 @@ char	*ft_itoa(int n)
 	num = n;
 	size = get_size(num);
 	str = (char *)malloc(sizeof(char) * (size + 1));
-	if (n == 0)
-	{
-		str[0] = '0';
-		return (str);
-	}
 	if (!str)
 		return (NULL);
-	if (n < 0)
-	{
-		num *= -1;
-		str[0] = '-';
-	}
-	str[size] = '\0';
-	while (size > 0)
-	{
-		str[--size] = (num % 10) + '0';
-		num /= 10;
-	}
+	fill_string(str, num, size);
 	return (str);
 }
