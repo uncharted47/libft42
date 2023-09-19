@@ -6,6 +6,14 @@
 "files.trimTrailingWhitespace": true,
 "files.insertFinalNewline": true,
 "files.associations": {
-	"libft.h": "c"
+	"libft.h": "c",
+	"random": "c",
+	"limits": "c",
+	"algorithm": "c",
+	"stdlib.h": "c",
+	"array": "c",
+	"string_view": "c",
+	"initializer_list": "c",
+	"utility": "c"
 },
 }
