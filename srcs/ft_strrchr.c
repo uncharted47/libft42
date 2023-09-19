@@ -6,7 +6,7 @@
 /*   By: elyzouli <elyzouli@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 18:38:44 by elyzouli          #+#    #+#             */
-/*   Updated: 2023/09/19 18:55:03 by elyzouli         ###   ########.fr       */
+/*   Updated: 2023/09/19 21:33:56 by elyzouli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,16 @@ char	*ft_strrchr(const char *str, int c)
 {
 	int		i;
 	char	*point;
+	size_t	end;
 
 	i = 0;
+	point = NULL;
+	end = ft_strlen(str);
 	if (str == NULL)
 		return (NULL);
 	if ((char)c == '\0')
 	{
-		point = (char *)&str[ft_strlen(str)];
+		point = (char *)&str[end];
 		return (point);
 	}
 	while (str[i])
@@ -31,7 +34,7 @@ char	*ft_strrchr(const char *str, int c)
 			point = (char *)&str[i];
 		i++;
 	}
-	if (point[0] == (char)c)
+	if (point && *point == (char)c)
 		return (point);
 	return (NULL);
 }

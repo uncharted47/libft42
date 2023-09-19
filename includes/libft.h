@@ -6,7 +6,7 @@
 /*   By: elyzouli <elyzouli@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 18:42:01 by elyzouli          #+#    #+#             */
-/*   Updated: 2023/09/19 20:30:03 by elyzouli         ###   ########.fr       */
+/*   Updated: 2023/09/19 20:56:00 by elyzouli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 
-int		ft_atoi(char *str);
+int		ft_atoi(const char *str);
 char	*ft_itoa(int n);
 void	ft_bzero(void *buffer, size_t n);
 void	*ft_memccpy(void *dest, const void *src, int c, size_t size);
@@ -44,5 +44,6 @@ int		ft_isprint(int c);
 int		ft_isalnum(int c);
 int		ft_tolower(int c);
 int		ft_toupper(int c);
+void	*ft_memalloc(size_t size);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: elyzouli <elyzouli@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/16 01:18:00 by elyzouli          #+#    #+#             */
-/*   Updated: 2023/09/19 16:13:16 by elyzouli         ###   ########.fr       */
+/*   Updated: 2023/09/19 20:53:59 by elyzouli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ static int	ft_result(int count, int n, int sign)
 	}
 }
 
-int	ft_atoi(char *str)
+int	ft_atoi(const char *str)
 {
 	int			i;
 	long int	n;

@@ -6,7 +6,7 @@
 /*   By: elyzouli <elyzouli@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 20:05:17 by elyzouli          #+#    #+#             */
-/*   Updated: 2023/09/19 20:07:14 by elyzouli         ###   ########.fr       */
+/*   Updated: 2023/09/19 21:21:18 by elyzouli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,15 @@ char	*ft_strnstr(const char *str, const char *to_find, size_t n)
 	size_t		i;
 
 	i = 0;
-	if (to_find == NULL || ft_strlen(to_find) == 0)
+	if (ft_strlen(to_find) > ft_strlen(str))
+		return (NULL);
+	if ((ft_strlen(str) == 0 || ft_strlen(to_find) == 0) || to_find == NULL )
 		return ((char *)str);
 	if (ft_strlen(to_find) > n)
 		return (NULL);
-	while (i < n)
+	if (n <= 0)
+		return (NULL);
+	while (i < n && str[i])
 	{
 		if (ft_strncmp((char *)&str[i], to_find, ft_strlen(to_find)) == 0)
 		{

@@ -6,7 +6,7 @@
 /*   By: elyzouli <elyzouli@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 01:39:27 by elyzouli          #+#    #+#             */
-/*   Updated: 2023/09/19 15:14:22 by elyzouli         ###   ########.fr       */
+/*   Updated: 2023/09/19 20:59:12 by elyzouli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,12 @@ char	*ft_strdup(char *str)
 	char	*dup;
 
 	i = 0;
-	if (str[i] == '\0' || str == NULL)
+	if (str == NULL)
 	{
 		return (NULL);
 	}
 	size = ft_strlen((char *)str);
-	dup = (char *)malloc(sizeof(char) * (size +1));
+	dup = (char *)malloc(sizeof(char) * (size + 1));
 	if (!dup)
 		return (NULL);
 	while (str[i])
