@@ -6,7 +6,7 @@
 /*   By: elyzouli <elyzouli@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/16 01:18:00 by elyzouli          #+#    #+#             */
-/*   Updated: 2023/09/19 14:14:04 by elyzouli         ###   ########.fr       */
+/*   Updated: 2023/09/19 16:13:16 by elyzouli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,15 +20,27 @@ static int	iswhitespace(char c)
 	return (0);
 }
 
+static int	ft_result(int count, int n, int sign)
+{
+	if (count > 1)
+		return (0);
+	else
+	{
+		return (n * sign);
+	}
+}
+
 int	ft_atoi(char *str)
 {
 	int			i;
 	long int	n;
 	int			sign;
+	int			count;
 
 	i = 0;
 	n = 0;
 	sign = 1;
+	count = 0;
 	if (str == NULL || (str != NULL && *str == '\0'))
 		return (0);
 	while (iswhitespace(str[i]))
@@ -39,12 +51,10 @@ int	ft_atoi(char *str)
 		{
 			sign *= -1;
 		}
+		count++;
 		i++;
 	}
 	while (str[i] >= '0' && str[i] <= '9')
-	{
-		n = n * 10 +(str[i] - '0');
-		i++;
-	}
-	return (n * sign);
+		n = (n * 10) + (str[i++] - '0');
+	return (ft_result(count, n, sign));
 }

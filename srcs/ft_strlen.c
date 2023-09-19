@@ -6,16 +6,17 @@
 /*   By: elyzouli <elyzouli@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 01:51:54 by elyzouli          #+#    #+#             */
-/*   Updated: 2023/09/19 14:14:05 by elyzouli         ###   ########.fr       */
+/*   Updated: 2023/09/19 15:03:58 by elyzouli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strlen(char *str)
+int	ft_strlen(const char *str)
 {
 	int	i;
 
+	i = 0;
 	while (str[i])
 		i++;
 	return (i);

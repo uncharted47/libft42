@@ -6,7 +6,7 @@
 /*   By: elyzouli <elyzouli@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/16 02:21:46 by elyzouli          #+#    #+#             */
-/*   Updated: 2023/09/19 14:14:21 by elyzouli         ###   ########.fr       */
+/*   Updated: 2023/09/19 15:39:37 by elyzouli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,11 @@ char	*ft_itoa(int n)
 	num = n;
 	size = get_size(num);
 	str = (char *)malloc(sizeof(char) * (size + 1));
+	if (n == 0)
+	{
+		str[0] = '0';
+		return (str);
+	}
 	if (!str)
 		return (NULL);
 	if (n < 0)

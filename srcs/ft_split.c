@@ -6,12 +6,11 @@
 /*   By: elyzouli <elyzouli@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 00:06:56 by elyzouli          #+#    #+#             */
-/*   Updated: 2023/09/19 14:14:07 by elyzouli         ###   ########.fr       */
+/*   Updated: 2023/09/19 15:02:04 by elyzouli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
 
 static int	iswhitespace(char *sep, char c)
 {
@@ -26,7 +25,6 @@ static int	iswhitespace(char *sep, char c)
 	}
 	return (0);
 }
-
 
 static size_t	ft_count_word(char const *str, char *sep)
 {
@@ -47,7 +45,6 @@ static size_t	ft_count_word(char const *str, char *sep)
 	return (count);
 }
 
-
 static size_t	ft_strlenchar(char *str, char *sep)
 {
 	size_t	i;
@@ -59,7 +56,6 @@ static size_t	ft_strlenchar(char *str, char *sep)
 	}
 	return (i);
 }
-
 
 static char	*ft_alloc(char *src, char *sep)
 {
@@ -78,7 +74,6 @@ static char	*ft_alloc(char *src, char *sep)
 	split[i] = '\0';
 	return (split);
 }
-
 
 char	**ft_split(char const *str, char *sep)
 {
