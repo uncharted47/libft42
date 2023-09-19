@@ -6,7 +6,7 @@
 /*   By: elyzouli <elyzouli@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/16 02:50:03 by elyzouli          #+#    #+#             */
-/*   Updated: 2023/09/19 14:14:31 by elyzouli         ###   ########.fr       */
+/*   Updated: 2023/09/19 18:14:53 by elyzouli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,14 @@
 
 void	ft_bzero(void *buffer, size_t n)
 {
-	size_t	i;
+	size_t			i;
+	unsigned char	*buf;
 
 	i = 0;
+	buf = (unsigned char *)buffer;
 	while (i < n)
 	{
-		*((unsigned char *)buffer + i) = '\0';
+		buf[i] = 0;
 		i++;
 	}
 }

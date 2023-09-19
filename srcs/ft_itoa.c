@@ -6,7 +6,7 @@
 /*   By: elyzouli <elyzouli@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/16 02:21:46 by elyzouli          #+#    #+#             */
-/*   Updated: 2023/09/19 16:39:18 by elyzouli         ###   ########.fr       */
+/*   Updated: 2023/09/19 17:21:34 by elyzouli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ static size_t	get_size(long int n)
 		i = 1;
 	else
 		i = 0;
-
 	while (n != 0)
 	{
 		i++;
