@@ -1,18 +1,16 @@
-FLAG = -Wall -Wextra -Werror
+FLAGS = -Wall -Wextra -Werror
 NAME = libft.a
-SRC = *.c
-INCLUDES = libft.h
-
+SRC = $(wildcard srcs/*.c)
+INCLUDES = includes
 OBJ = $(SRC:.c=.o)
 
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	@ar rc $@ $^
-	@ranlib $@
+	@ar rcs $(NAME) $(OBJ)
 
 %.o: %.c
-	@gcc $(FLAG) -c $< -o $@ -I {INCLUDES}
+	@cc $(FLAGS) -c $< -o $@ -I $(INCLUDES)
 
 clean:
 	@rm -f $(OBJ)
@@ -21,7 +19,7 @@ clean:
 fclean: clean
 	@rm -f $(NAME)
 
-
 re: fclean all
+
 
 .PHONY: all clean fclean re

@@ -3,35 +3,35 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memove.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: elyzouli <elyzouli@student.42.fr>          +#+  +:+       +#+        */
+/*   By: elyzouli <elyzouli@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/16 17:13:03 by elyzouli          #+#    #+#             */
-/*   Updated: 2023/09/18 23:59:21 by elyzouli         ###   ########.fr       */
+/*   Updated: 2023/09/19 14:14:18 by elyzouli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dst, const void *src, size_t len)
+void	*ft_memmove(void *dest, const void *src, size_t len)
 {
-	char		*dst_ptr;
+	char		*dest_ptr;
 	const char	*src_ptr;
 	size_t		i;
 
-	if (dest == NULL || src == NULL || size_t == 0)
+	if (dest == NULL || src == NULL || len == 0)
 		return (NULL);
-	dst_ptr = dst;
+	dest_ptr = dest;
 	src_ptr = src;
 	i = len - 1;
-	if (dst_ptr > src_ptr)
+	if (dest_ptr > src_ptr)
 	{
 		while (i < len)
 		{
-			dst_ptr[i] = src_ptr[i];
+			dest_ptr[i] = src_ptr[i];
 			i--;
 		}
 	}
 	else
-		ft_memcpy(dst, src, len);
-	return (dst);
+		ft_memcpy(dest, src, len);
+	return (dest);
 }

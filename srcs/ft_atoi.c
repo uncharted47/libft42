@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: elyzouli <elyzouli@student.42.fr>          +#+  +:+       +#+        */
+/*   By: elyzouli <elyzouli@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/16 01:18:00 by elyzouli          #+#    #+#             */
-/*   Updated: 2023/09/18 23:59:08 by elyzouli         ###   ########.fr       */
+/*   Updated: 2023/09/19 14:14:04 by elyzouli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int	ft_atoi(char *str)
 	n = 0;
 	sign = 1;
 	if (str == NULL || (str != NULL && *str == '\0'))
-		return (NULL);
+		return (0);
 	while (iswhitespace(str[i]))
 		i++;
 	while (str[i] == '-' || str[i] == '+')
