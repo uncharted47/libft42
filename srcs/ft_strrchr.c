@@ -1,31 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft.strncat.c                                       :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: elyzouli <elyzouli@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/19 17:14:59 by elyzouli          #+#    #+#             */
-/*   Updated: 2023/09/19 18:34:44 by elyzouli         ###   ########.fr       */
+/*   Created: 2023/09/19 18:38:44 by elyzouli          #+#    #+#             */
+/*   Updated: 2023/09/19 18:55:03 by elyzouli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strncat(char *dest, char *src, size_t n)
+char	*ft_strrchr(const char *str, int c)
 {
-	size_t			size;
-	unsigned int	i;
+	int		i;
+	char	*point;
 
-	size = ft_strlen((char *)dest);
 	i = 0;
-	if (!dest || !src)
-		return (dest);
-	while (src[i] && i < n)
+	if (str == NULL)
+		return (NULL);
+	if ((char)c == '\0')
 	{
-		dest[size + i] = src[i];
+		point = (char *)&str[ft_strlen(str)];
+		return (point);
+	}
+	while (str[i])
+	{
+		if (str[i] == (char)c)
+			point = (char *)&str[i];
 		i++;
 	}
-	dest[size + i] = '\0';
-	return (dest);
+	if (point[0] == (char)c)
+		return (point);
+	return (NULL);
 }

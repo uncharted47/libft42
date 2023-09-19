@@ -6,7 +6,7 @@
 /*   By: elyzouli <elyzouli@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/17 22:00:28 by elyzouli          #+#    #+#             */
-/*   Updated: 2023/09/19 18:01:16 by elyzouli         ###   ########.fr       */
+/*   Updated: 2023/09/19 18:41:14 by elyzouli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,5 +31,7 @@ char	*ft_strcpy(char *dest, const char *src);
 char	*ft_strcat(char *dest, const char *src);
 char	*ft_strncat(char *dest, char *src, size_t n);
 size_t	ft_strlcat(char *dest, char *src, size_t size);
+char	*ft_strrchr(const char *str, int c);
+char	*ft_strchr(const char *str, int c);
 
 #endif
