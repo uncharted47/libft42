@@ -6,7 +6,7 @@
 /*   By: elyzouli <elyzouli@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/17 22:00:28 by elyzouli          #+#    #+#             */
-/*   Updated: 2023/09/19 20:56:10 by elyzouli         ###   ########.fr       */
+/*   Updated: 2023/09/19 23:17:38 by elyzouli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ char	*ft_strrchr(const char *str, int c);
 char	*ft_strchr(const char *str, int c);
 char	*ft_strstr(const char *str, const char *to_find);
 char	*ft_strnstr(const char *str, const char *to_find, size_t n);
+char	**ft_split(char const *str, char *sep);
 int		ft_isalpha(int c);
 int		ft_isascii(int c);
 int		ft_isdigit(int c);
@@ -45,5 +46,8 @@ int		ft_isalnum(int c);
 int		ft_tolower(int c);
 int		ft_toupper(int c);
 void	*ft_memalloc(size_t size);
+void	ft_memdel(void **ap);
+char	*ft_strnew(size_t size);
+void	ft_strclr(char *s);
 
 #endif
