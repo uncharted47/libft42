@@ -1,38 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnew.c                                        :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: elyzouli <elyzouli@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/19 23:09:54 by elyzouli          #+#    #+#             */
-/*   Updated: 2023/09/21 00:26:27 by elyzouli         ###   ########.fr       */
+/*   Created: 2023/09/21 00:41:12 by elyzouli          #+#    #+#             */
+/*   Updated: 2023/09/21 00:41:53 by elyzouli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnew(size_t size)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	char	*newstr;
+	char			*newstr;
+	unsigned int	len;
+	unsigned int	i;
 
-	if (size == 0)
+	if (s == 0 || f == 0)
+		return (NULL);
+	len = ft_strlen(s);
+	newstr = (char *)malloc(sizeof(char) * (len + 1));
+	if (!newstr)
+		return (NULL);
+	i = 0;
+	while (s[i])
 	{
-		newstr = (char *)malloc(sizeof(*newstr) * (1));
-		if (newstr)
-		{
-			ft_memset(newstr, '\0', (1));
-			return (newstr);
-		}
+		newstr[i] = f(i, s[i]);
+		i++;
 	}
-	else if (size)
-	{
-		newstr = (char *)malloc(sizeof(*newstr) * (size + 1));
-		if (newstr)
-		{
-			ft_memset(newstr, '\0', (size + 1));
-			return (newstr);
-		}
-	}
-	return (NULL);
+	newstr[i] = '\0';
+	return (newstr);
 }

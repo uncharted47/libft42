@@ -1,38 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnew.c                                        :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: elyzouli <elyzouli@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/19 23:09:54 by elyzouli          #+#    #+#             */
-/*   Updated: 2023/09/21 00:26:27 by elyzouli         ###   ########.fr       */
+/*   Created: 2023/09/20 22:31:50 by elyzouli          #+#    #+#             */
+/*   Updated: 2023/09/20 22:58:23 by elyzouli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnew(size_t size)
+size_t	ft_strlcpy(char *dest, const char *src, size_t dstsize)
 {
-	char	*newstr;
+	size_t	src_len;
+	size_t	i;
 
-	if (size == 0)
+	src_len = ft_strlen(src);
+	if (dstsize == 0)
 	{
-		newstr = (char *)malloc(sizeof(*newstr) * (1));
-		if (newstr)
-		{
-			ft_memset(newstr, '\0', (1));
-			return (newstr);
-		}
+		return (src_len);
 	}
-	else if (size)
+	i = 0;
+	while (src[i] != '\0' && i < (dstsize - 1))
 	{
-		newstr = (char *)malloc(sizeof(*newstr) * (size + 1));
-		if (newstr)
-		{
-			ft_memset(newstr, '\0', (size + 1));
-			return (newstr);
-		}
+		dest[i] = src[i];
+		i++;
 	}
-	return (NULL);
+	dest[i] = '\0';
+	return (src_len);
 }

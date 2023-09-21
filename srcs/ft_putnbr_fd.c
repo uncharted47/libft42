@@ -1,38 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnew.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: elyzouli <elyzouli@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/19 23:09:54 by elyzouli          #+#    #+#             */
-/*   Updated: 2023/09/21 00:26:27 by elyzouli         ###   ########.fr       */
+/*   Created: 2023/09/21 00:52:51 by elyzouli          #+#    #+#             */
+/*   Updated: 2023/09/21 01:01:56 by elyzouli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnew(size_t size)
+void	ft_putnbr_fd(int n, int fd)
 {
-	char	*newstr;
+	long int	nb;
 
-	if (size == 0)
+	nb = n;
+	if (fd < 0)
+		return ;
+	if (nb < 0)
 	{
-		newstr = (char *)malloc(sizeof(*newstr) * (1));
-		if (newstr)
-		{
-			ft_memset(newstr, '\0', (1));
-			return (newstr);
-		}
+		ft_putchar_fd('-', fd);
+		nb *= -1;
 	}
-	else if (size)
+	if (nb < 10)
+		ft_putchar_fd(nb + '0', fd);
+	else
 	{
-		newstr = (char *)malloc(sizeof(*newstr) * (size + 1));
-		if (newstr)
-		{
-			ft_memset(newstr, '\0', (size + 1));
-			return (newstr);
-		}
+		ft_putnbr_fd(nb / 10, fd);
+		ft_putnbr_fd(nb % 10, fd);
 	}
-	return (NULL);
 }
