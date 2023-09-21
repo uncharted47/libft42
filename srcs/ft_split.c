@@ -6,7 +6,7 @@
 /*   By: elyzouli <elyzouli@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 00:06:56 by elyzouli          #+#    #+#             */
-/*   Updated: 2023/09/21 01:54:50 by elyzouli         ###   ########.fr       */
+/*   Updated: 2023/09/21 14:48:16 by elyzouli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ static size_t	ft_count_word(char const *str, char sep)
 
 	count = 0;
 	i = 0;
+	if (str[i] == '\0')
+		return (count);
 	while (str[i])
 	{
 		while (iswhitespace(sep, str[i]))
@@ -59,6 +61,8 @@ static char	*ft_alloc(char *src, char sep)
 	i = 0;
 	size = ft_strlenchar(src, sep);
 	split = (char *)malloc(sizeof(char) * (size + 1));
+	if (!split)
+		return (NULL);
 	while (i < size)
 	{
 		split[i] = src[i];
