@@ -6,11 +6,13 @@
 /*   By: elyzouli <elyzouli@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/16 01:18:00 by elyzouli          #+#    #+#             */
-/*   Updated: 2023/09/19 20:53:59 by elyzouli         ###   ########.fr       */
+/*   Updated: 2023/09/29 22:49:12 by elyzouli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#define LLONG_MAX 9223372036854775807
+#define LLONG_MIN (-9223372036854775807LL - 1LL)
 
 static int	iswhitespace(char c)
 {
@@ -20,20 +22,22 @@ static int	iswhitespace(char c)
 	return (0);
 }
 
-static int	ft_result(int count, int n, int sign)
+static int	ft_result(int count, long long int n, int sign)
 {
 	if (count > 1)
 		return (0);
+	else if (n < LLONG_MIN && sign == -1)
+		return (0);
+	else if (n > LLONG_MAX && sign == 1)
+		return (-1);
 	else
-	{
 		return (n * sign);
-	}
 }
 
 int	ft_atoi(const char *str)
 {
 	int			i;
-	long int	n;
+	long long	n;
 	int			sign;
 	int			count;
 
@@ -48,9 +52,7 @@ int	ft_atoi(const char *str)
 	while (str[i] == '-' || str[i] == '+')
 	{
 		if (str[i] == '-')
-		{
 			sign *= -1;
-		}
 		count++;
 		i++;
 	}
