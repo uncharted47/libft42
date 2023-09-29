@@ -6,7 +6,7 @@
 /*   By: elyzouli <elyzouli@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/16 17:13:03 by elyzouli          #+#    #+#             */
-/*   Updated: 2023/09/19 16:07:26 by elyzouli         ###   ########.fr       */
+/*   Updated: 2023/09/29 13:40:29 by elyzouli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	*ft_memmove(void *dest, const void *src, size_t len)
 	else
 	{
 		i = 0;
-		while (len > i)
+		while (i < len)
 		{
 			dest_ptr[i] = src_ptr[i];
 			i++;

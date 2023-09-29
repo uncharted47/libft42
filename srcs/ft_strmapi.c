@@ -6,7 +6,7 @@
 /*   By: elyzouli <elyzouli@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/21 00:41:12 by elyzouli          #+#    #+#             */
-/*   Updated: 2023/09/21 00:41:53 by elyzouli         ###   ########.fr       */
+/*   Updated: 2023/09/28 21:42:42 by elyzouli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	if (s == 0 || f == 0)
 		return (NULL);
 	len = ft_strlen(s);
-	newstr = (char *)malloc(sizeof(char) * (len + 1));
+	newstr = ft_strnew(len);
 	if (!newstr)
 		return (NULL);
 	i = 0;

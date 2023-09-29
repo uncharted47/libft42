@@ -6,7 +6,7 @@
 /*   By: elyzouli <elyzouli@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 22:30:18 by elyzouli          #+#    #+#             */
-/*   Updated: 2023/09/19 22:31:42 by elyzouli         ###   ########.fr       */
+/*   Updated: 2023/09/28 21:59:19 by elyzouli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,5 @@
 void	ft_strclr(char *s)
 {
 	if (*s)
-	{
 		ft_memset(s, '\0', ft_strlen(s));
-	}
 }
