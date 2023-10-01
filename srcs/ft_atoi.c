@@ -6,7 +6,7 @@
 /*   By: elyzouli <elyzouli@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/16 01:18:00 by elyzouli          #+#    #+#             */
-/*   Updated: 2023/10/01 01:41:11 by elyzouli         ###   ########.fr       */
+/*   Updated: 2023/10/01 01:53:55 by elyzouli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ static int	ft_result(int count, long long int n, int sign)
 {
 	if (count > 1)
 		return (0);
-	else if (n < LLONG_MIN && sign == -1)
+	else if (n > LLONG_MAX && sign == -1)
 		return (0);
 	else if (n > LLONG_MAX && sign == 1)
 		return (-1);
@@ -34,10 +34,10 @@ static int	ft_result(int count, long long int n, int sign)
 
 int	ft_atoi(const char *str)
 {
-	int			i;
-	long long	n;
-	int			sign;
-	int			count;
+	int					i;
+	unsigned long long	n;
+	int					sign;
+	int					count;
 
 	i = 0;
 	n = 0;
