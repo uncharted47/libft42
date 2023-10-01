@@ -6,13 +6,14 @@
 /*   By: elyzouli <elyzouli@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 18:42:01 by elyzouli          #+#    #+#             */
-/*   Updated: 2023/10/01 01:12:53 by elyzouli         ###   ########.fr       */
+/*   Updated: 2023/10/01 01:40:58 by elyzouli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
+# include <limits.h>
 # include <stdlib.h>
 # include <unistd.h>
 

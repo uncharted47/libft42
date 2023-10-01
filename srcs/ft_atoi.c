@@ -6,13 +6,11 @@
 /*   By: elyzouli <elyzouli@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/16 01:18:00 by elyzouli          #+#    #+#             */
-/*   Updated: 2023/10/01 01:13:19 by elyzouli         ###   ########.fr       */
+/*   Updated: 2023/10/01 01:41:11 by elyzouli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#define LLONG_MAX 9223372036854775807
-#define LLONG_MIN -9223372036854775808
 
 static int	iswhitespace(char c)
 {
