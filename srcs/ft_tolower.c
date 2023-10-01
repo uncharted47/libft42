@@ -6,11 +6,10 @@
 /*   By: elyzouli <elyzouli@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 20:20:14 by elyzouli          #+#    #+#             */
-/*   Updated: 2023/09/19 20:23:52 by elyzouli         ###   ########.fr       */
+/*   Updated: 2023/09/30 13:15:46 by elyzouli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
 #include "libft.h"
 
 int	ft_tolower(int c)
