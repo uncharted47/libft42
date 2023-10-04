@@ -6,15 +6,16 @@
 /*   By: elyzouli <elyzouli@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 18:42:01 by elyzouli          #+#    #+#             */
-/*   Updated: 2023/10/01 01:57:54 by elyzouli         ###   ########.fr       */
+/*   Updated: 2023/10/04 00:49:23 by elyzouli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
-# define LLONG_MAX 9223372036854775807LL
+
 # include <stdlib.h>
 # include <unistd.h>
+# include <limits.h>
 
 typedef struct s_list
 {
