@@ -6,30 +6,24 @@
 /*   By: elyzouli <elyzouli@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/16 01:18:00 by elyzouli          #+#    #+#             */
-/*   Updated: 2023/10/01 01:53:55 by elyzouli         ###   ########.fr       */
+/*   Updated: 2023/10/04 19:34:43 by elyzouli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	iswhitespace(char c)
+static const char	*skipwhitespace(const char *c, int *sign)
 {
-	if (c == ' ' || c == '\t' || c == '\n'
-		|| c == '\r' || c == '\v' || c == '\f')
-		return (1);
-	return (0);
-}
-
-static int	ft_result(int count, long long int n, int sign)
-{
-	if (count > 1)
-		return (0);
-	else if (n > LLONG_MAX && sign == -1)
-		return (0);
-	else if (n > LLONG_MAX && sign == 1)
-		return (-1);
-	else
-		return (n * sign);
+	while (*c == ' ' || *c == '\t' || *c == '\n'
+		|| *c == '\r' || *c == '\v' || *c == '\f')
+		c++;
+	if (*c == '-' || *c == '+')
+	{
+		if (*c == '-')
+			*sign = -1;
+		c++;
+	}
+	return (c);
 }
 
 int	ft_atoi(const char *str)
@@ -37,24 +31,20 @@ int	ft_atoi(const char *str)
 	int					i;
 	unsigned long long	n;
 	int					sign;
-	int					count;
 
 	i = 0;
 	n = 0;
 	sign = 1;
-	count = 0;
 	if (str == NULL || (str != NULL && *str == '\0'))
 		return (0);
-	while (iswhitespace(str[i]))
-		i++;
-	while (str[i] == '-' || str[i] == '+')
-	{
-		if (str[i] == '-')
-			sign *= -1;
-		count++;
-		i++;
-	}
+	str = skipwhitespace(str, &sign);
 	while (str[i] >= '0' && str[i] <= '9')
+	{
 		n = (n * 10) + (str[i++] - '0');
-	return (ft_result(count, n, sign));
+		if (n > LLONG_MAX && sign == 1)
+			return (-1);
+		if (n > LLONG_MAX && sign == -1)
+			return (0);
+	}
+	return (n * sign);
 }
