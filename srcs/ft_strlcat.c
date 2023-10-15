@@ -6,7 +6,7 @@
 /*   By: elyzouli <elyzouli@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 17:12:02 by elyzouli          #+#    #+#             */
-/*   Updated: 2023/09/19 17:59:42 by elyzouli         ###   ########.fr       */
+/*   Updated: 2023/10/05 00:20:21 by elyzouli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ size_t	ft_strlcat(char *dest, char *src, size_t size)
 		result = size + ft_strlen(src);
 	sizedest = ft_strlen(dest);
 	i = 0;
-	while (src[i] && sizedest + i < size - 1)
+	while (src[i] && sizedest < size - i - 1)
 	{
 		dest[sizedest + i] = src[i];
 		i++;

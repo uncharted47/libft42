@@ -6,7 +6,7 @@
 /*   By: elyzouli <elyzouli@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 20:02:51 by elyzouli          #+#    #+#             */
-/*   Updated: 2023/09/19 20:04:41 by elyzouli         ###   ########.fr       */
+/*   Updated: 2023/10/04 19:43:07 by elyzouli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 char	*ft_strstr(const char *str, const char *to_find)
 {
 	unsigned int	i;
-	char			*result;
 
 	i = 0;
 	if (to_find == NULL || ft_strlen(to_find) == 0)
@@ -23,7 +22,7 @@ char	*ft_strstr(const char *str, const char *to_find)
 	while (i < ft_strlen(str))
 	{
 		if (ft_strncmp((char *)&str[i], to_find, ft_strlen(to_find)) == 0)
-			return ((result = (char *)&str[i]));
+			return ((char *)&str[i]);
 		i++;
 	}
 	return (NULL);

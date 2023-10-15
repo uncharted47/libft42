@@ -6,7 +6,7 @@
 /*   By: elyzouli <elyzouli@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 18:42:01 by elyzouli          #+#    #+#             */
-/*   Updated: 2023/10/04 00:49:23 by elyzouli         ###   ########.fr       */
+/*   Updated: 2023/10/15 02:58:53 by elyzouli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,6 @@ char	*ft_strnew(size_t size);
 void	ft_strclr(char *s);
 char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strtrim(char const *s1, char const *set);
-char	*ft_strsub(char const *s, unsigned int start, size_t len);
 size_t	ft_strlcpy(char *dest, const char *src, size_t dstsize);
 int		ft_strnequ(char const *s1, char const *s2, size_t n);
 void	ft_striteri(char *s, void (*f)(unsigned int, char *));

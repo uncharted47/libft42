@@ -6,7 +6,7 @@
 /*   By: elyzouli <elyzouli@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/16 01:18:00 by elyzouli          #+#    #+#             */
-/*   Updated: 2023/10/04 19:37:43 by elyzouli         ###   ########.fr       */
+/*   Updated: 2023/10/09 02:53:12 by elyzouli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,9 @@ static const char	*skipwhitespace(const char *c, int *sign)
 
 int	ft_atoi(const char *str)
 {
-	int					i;
-	unsigned long long	n;
-	int					sign;
+	int	i;
+	int	n;
+	int	sign;
 
 	i = 0;
 	n = 0;
@@ -38,13 +38,7 @@ int	ft_atoi(const char *str)
 	if (str == NULL || (str != NULL && *str == '\0'))
 		return (0);
 	str = skipwhitespace(str, &sign);
-	while (str[i] >= '0' && str[i] <= '9')
-	{
+	while (ft_isdigit(str[i]))
 		n = (n * 10) + (str[i++] - '0');
-		if (n > LLONG_MAX && sign == 1)
-			return (-1);
-		if (n > LLONG_MAX && sign == -1)
-			return (0);
-	}
 	return (n * sign);
 }
